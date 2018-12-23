@@ -12,8 +12,11 @@ int main() {
 
 	activationMap.printActivationMap();
 
-	NN.doOneIteration();
-	activationMap.printActivationMap();
+	for (size_t i = 0; i < 30; i++)
+	{
+		NN.doOneIteration();
+		activationMap.printActivationMap();
+	}
 
 	
 

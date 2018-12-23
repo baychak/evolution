@@ -11,6 +11,14 @@ Neuron::Neuron():
     sensitivity(1.0)
 {}
 
+Neuron::Neuron(Point in, Point out, double amplification, double bias, double sensitivity):
+    in(in),
+    out(out),
+    amplification(amplification),
+    bias(bias),
+    sensitivity(sensitivity)
+{}
+
 ActivationPoint Neuron::operator()(const std::vector<ActivationPoint> & activationMap) const {
     double x = getActivation(activationMap);
     return ActivationPoint {
@@ -21,11 +29,13 @@ ActivationPoint Neuron::operator()(const std::vector<ActivationPoint> & activati
 
 double Neuron::getActivation(const std::vector<ActivationPoint> & activationMap) const {
     
-    for(ActivationPoint point : activationMap)
-    {
-        std::cout << "Neuron::getActivation()" << std::endl;
+    double summa = 0.0;
+
+    for (ActivationPoint point : activationMap) {
+        summa += std::exp(-std::pow(point.point.x - in.x, 2.0) - std::pow(point.point.y - in.y, 2.0))
+            * point.activation;
     }
 
-    return 1.0;
-    
+    //std::cout << "Neuron::getActivation(): " << summa << std::endl;
+    return summa;
 }

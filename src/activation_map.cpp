@@ -3,12 +3,12 @@
 #include <iostream>
 
 ActivationMap::ActivationMap() :
-    mMap{ActivationPoint{Point{2.0, 2.0}, -1.0}, ActivationPoint{Point{2.0, 2.0}, -1.0}}  
+    mMap{ActivationPoint{Point{2.0, 2.0}, 1.0}}  
 {}
 
 
 void ActivationMap::addActivationPoint(const ActivationPoint & point) {
-    
+    mMap.push_back(point);
 }
 
 const std::vector<ActivationPoint> & ActivationMap::getActivationMap() const {
