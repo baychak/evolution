@@ -9,12 +9,13 @@ NeuralNetwork::NeuralNetwork(NeuronMap & neuronMap, ActivationMap & activationMa
 
 void NeuralNetwork::doOneIteration() {
     
-    std::vector<ActivationPoint> newMap;
+    ActivationMap newMap;
 
     for(Neuron neuron : mNeuronMap.getNeuronMap())
     {
-        newMap.emplace_back(neuron(mActivationMap.getActivationMap()));
+        newMap.addActivationPoint(neuron(mActivationMap));
     }
 
-    mActivationMap.setActivationMap(newMap);
+    mActivationMap = newMap;
 }
+ 

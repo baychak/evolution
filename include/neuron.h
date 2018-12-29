@@ -6,16 +6,16 @@
 class Neuron {
 public:
     Neuron();
-    Neuron(Point in, Point out, double amplification, double bias, double sensitivity);
+    Neuron(Point in, Point out, double amplification, double sensitivity, double bias);
 
-    ActivationPoint operator()(const std::vector<ActivationPoint> & activationMap) const;
+    ActivationPoint operator()(const ActivationMap & activationMap) const;
 
 private:
     const Point in;
     const Point out;
     const double amplification;
-    const double bias;
     const double sensitivity;
+    const double bias;
 
-    double getActivation(const std::vector<ActivationPoint> & activationMap) const;
+    double activationFunction(double x) const;
 };
