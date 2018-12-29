@@ -4,13 +4,14 @@
 
 #include "neuron.h"
 
-class NeuronMap {
-public:
+class NeuronMap
+{
+  public:
     NeuronMap();
-    NeuronMap(const std::vector<Neuron> & map);
+    NeuronMap(const std::vector<Neuron> &map);
 
-    const std::vector<Neuron> & getNeuronMap() const;
+    const std::vector<Neuron> &getNeuronMap() const;
 
-private:
+  private:
     std::vector<Neuron> mNeuronMap;
 };

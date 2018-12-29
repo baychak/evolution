@@ -1,8 +1,7 @@
 #pragma once
 
-struct Point {
+struct Point
+{
     double x;
     double y;
 };
-
-
