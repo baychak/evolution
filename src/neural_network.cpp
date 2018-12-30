@@ -2,20 +2,15 @@
 
 #include <iostream>
 
-NeuralNetwork::NeuralNetwork(NeuronMap &neuronMap, ActivationMap &activationMap) : mNeuronMap(neuronMap),
-                                                                                   mActivationMap(activationMap)
-{
-}
+NeuralNetwork::NeuralNetwork(NeuronMap &neuronMap, ActivationMap &activationMap)
+    : mNeuronMap(neuronMap), mActivationMap(activationMap) {}
 
-void NeuralNetwork::doOneIteration()
-{
+void NeuralNetwork::doOneIteration() {
+  ActivationMap newMap;
 
-    ActivationMap newMap;
+  for (Neuron neuron : mNeuronMap.getNeuronMap()) {
+    newMap.addActivationPoint(neuron(mActivationMap));
+  }
 
-    for (Neuron neuron : mNeuronMap.getNeuronMap())
-    {
-        newMap.addActivationPoint(neuron(mActivationMap));
-    }
-
-    mActivationMap = newMap;
+  mActivationMap = newMap;
 }
