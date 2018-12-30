@@ -4,7 +4,7 @@
             "name": "Linux",
             "defines": [],
             "compilerPath": "/usr/bin/g++",
-            "cStandard": "c17",
+            "cStandard": "c11",
             "includePath": [
                 "${default}",
                 "${workspaceFolder}/include"
