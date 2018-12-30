@@ -12,13 +12,16 @@ struct ActivationPoint {
 class ActivationMap {
  public:
   ActivationMap();
-  ActivationMap(const std::vector<ActivationPoint> map);
+  ActivationMap(const std::vector<ActivationPoint> & map);
 
-  ActivationMap& operator=(ActivationMap& map);
-  void addActivationPoint(const ActivationPoint& point);
-  std::vector<ActivationPoint> getActivationMap() const;
+  ActivationMap& operator=(const ActivationMap& map);
+
   void setActivationMap(const std::vector<ActivationPoint> map);
+  void addActivationPoint(const ActivationPoint& point);
+  
+  std::vector<ActivationPoint> getActivationMap() const;
   double getActivation(Point point) const;
+
   void printActivationMap() const;
 
  private:

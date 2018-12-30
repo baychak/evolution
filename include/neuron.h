@@ -9,12 +9,12 @@ class Neuron {
   Neuron();
   Neuron(Point in, Point out, double amplification, double sensitivity,
          double bias);
-  Neuron(const NeuronParameters &parameters);
+  Neuron(const LowNeuronParameters &parameters);
 
   ActivationPoint operator()(const ActivationMap &activationMap) const;
 
  private:
-  const NeuronParameters mParameters;
+  const LowNeuronParameters mParameters;
 
   double activationFunction(double x) const;
 };

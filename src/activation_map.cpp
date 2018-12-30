@@ -5,25 +5,25 @@
 
 ActivationMap::ActivationMap() {}
 
-ActivationMap::ActivationMap(const std::vector<ActivationPoint> map)
+ActivationMap::ActivationMap(const std::vector<ActivationPoint> & map)
     : mMap(map) {}
 
-ActivationMap &ActivationMap::operator=(ActivationMap &map) {
+ActivationMap &ActivationMap::operator=(const ActivationMap &map) {
   if (this == &map) return *this;
   mMap = map.mMap;
   return *this;
 }
 
+void ActivationMap::setActivationMap(const std::vector<ActivationPoint> map) {
+  mMap = map;
+}
+
 void ActivationMap::addActivationPoint(const ActivationPoint &point) {
-  mMap.push_back(point);
+  mMap.emplace_back(point);
 }
 
 std::vector<ActivationPoint> ActivationMap::getActivationMap() const {
   return mMap;
-}
-
-void ActivationMap::setActivationMap(const std::vector<ActivationPoint> map) {
-  mMap = map;
 }
 
 double ActivationMap::getActivation(Point point) const {
@@ -39,8 +39,10 @@ double ActivationMap::getActivation(Point point) const {
 }
 
 void ActivationMap::printActivationMap() const {
+  std::cout << "Begin " ;
   for (ActivationPoint point : mMap) {
-    std::cout << "x: " << point.point.x << " y: " << point.point.y
-              << " act: " << point.activation << std::endl;
+    std::cout << "[(" << point.point.x << "," << point.point.y
+              << ")," << point.activation << "]  ";
   }
+  std::cout << "End" << std::endl;
 }

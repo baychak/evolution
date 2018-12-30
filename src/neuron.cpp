@@ -5,14 +5,14 @@
 
 Neuron::Neuron()
     : mParameters(
-          NeuronParameters{Point{0.0, 0.0}, Point{0.0, 0.0}, 0.0, 1.0, 0.0}) {}
+          LowNeuronParameters{Point{0.0, 0.0}, Point{0.0, 0.0}, 0.0, 1.0, 0.0}) {}
 
 Neuron::Neuron(Point in, Point out, double amplification, double sensitivity,
                double bias)
-    : mParameters(NeuronParameters{in, out, amplification, sensitivity, bias}) {
+    : mParameters(LowNeuronParameters{in, out, amplification, sensitivity, bias}) {
 }
 
-Neuron::Neuron(const NeuronParameters &parameters) : mParameters(parameters) {}
+Neuron::Neuron(const LowNeuronParameters &parameters) : mParameters(parameters) {}
 
 double Neuron::activationFunction(double x) const {
   x = mParameters.sensitivity * (x - mParameters.bias);

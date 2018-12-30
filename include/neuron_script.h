@@ -4,7 +4,7 @@
 
 #include "point.h"
 
-struct NeuronParameters {
+struct HighNeuronParameters {
   const Point in;
   const Point out;
   const double amplification;
@@ -12,4 +12,14 @@ struct NeuronParameters {
   const double bias;
 };
 
-typedef std::vector<NeuronParameters> NeuronScript;
+typedef std::vector<HighNeuronParameters> HighScript;
+
+struct LowNeuronParameters {
+  const Point in;
+  const Point out;
+  const double amplification;
+  const double sensitivity;
+  const double bias;
+};
+
+typedef std::vector<LowNeuronParameters> LowScript;
