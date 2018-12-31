@@ -12,6 +12,7 @@ LowScript Translator::operator()(const HighScript &code) {
 
   for (const HighNeuronParameters highParameters : code) {
     mNN.addActivationPoints(highParameters);
+    mActivationMap.printActivationMap();
     mNN.doOneIteration();
     mActivationMap.printActivationMap();
 

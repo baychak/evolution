@@ -9,7 +9,7 @@ class Translator {
   LowScript operator()(const HighScript &code);
 
  private:
-  NeuralNetwork mNN;
   NeuronMap mNeuronMap;
   ActivationMap mActivationMap;
+  NeuralNetwork mNN;
 };
