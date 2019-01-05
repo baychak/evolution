@@ -15,14 +15,14 @@ Neuron::Neuron(Point in, Point out, double amplification, double sensitivity,
 Neuron::Neuron(const LowNeuronParameters &parameters) : mParameters(parameters) {}
 
 double Neuron::activationFunction(double x) const {
-  x = mParameters.sensitivity * (x - mParameters.bias);
+  double x1 = mParameters.sensitivity * (x - mParameters.bias);
   double absA = std::abs(mParameters.amplification);
-  if (x > absA) {
-    return absA;
-  } else if (x < -absA) {
-    return -absA;
+  if (x1 > absA) {
+    return x + absA;
+  } else if (x1 < -absA) {
+    return x - absA;
   } else {
-    return x;
+    return x + x1;
   };
 }
 
