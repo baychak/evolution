@@ -5,46 +5,65 @@
 int main() {
   std::cout << "Start" << std::endl;
 
-  LowScript lowTranslatorCode({
-    {{0.0, 0.0}, {10.0, 0.0}, 1.0, 1.0, 0.0},
-    {{0.0, 2.0}, {10.0, 2.0}, 14.0, 1.0, 0.0},
-    {{0.0, 4.0}, {10.0, 4.0}, 12.0, 1.0, 0.0},
-    {{0.0, 6.0}, {10.0, 6.0}, 14.0, 1.0, 0.0},
-    {{0.0, 8.0}, {10.0, 8.0}, 15.0, 1.0, 0.0},
-    {{0.0, 10.0}, {10.0, 10.0}, 2.0, 1.0, 0.0},
-    {{0.0, 12.0}, {10.0, 12.0}, 1.0, 1.0, 0.0}
-  });
+  LowScript lowTranslatorCode1({{{0.0, 0.0}, {10.0, 0.0}, 0.0, 1.0, 0.0},
+                                {{0.0, 2.0}, {10.0, 2.0}, 0.0, 1.0, 0.0},
+                                {{0.0, 4.0}, {10.0, 4.0}, 0.0, 1.0, 0.0},
+                                {{0.0, 6.0}, {10.0, 6.0}, 0.0, 1.0, 0.0},
+                                {{0.0, 8.0}, {10.0, 8.0}, 0.0, 1.0, 0.0},
+                                {{0.0, 10.0}, {10.0, 10.0}, 0.0, 1.0, 0.0},
+                                {{0.0, 12.0}, {10.0, 12.0}, 0.0, 1.0, 0.0}});
 
-  HighScript highTranslatorCode({
-    {{0.0, 0.0}, {10.0, 0.0}, 1.0, 1.0, 0.0},
-    {{0.0, 2.0}, {10.0, 2.0}, 14.0, 1.0, 0.0},
-    {{0.0, 4.0}, {10.0, 4.0}, 12.0, 1.0, 0.0},
-    {{0.0, 6.0}, {10.0, 6.0}, 14.0, 1.0, 0.0},
-    {{0.0, 8.0}, {10.0, 8.0}, 15.0, 1.0, 0.0},
-    {{0.0, 10.0}, {10.0, 10.0}, 2.0, 1.0, 0.0},
-    {{0.0, 12.0}, {10.0, 12.0}, 1.0, 1.0, 0.0}
-  });
+  HighScript highTranslatorCode({{{0.0, 0.0}, {10.0, 0.0}, 0.0, 1.0, 0.0},
+                                 {{0.0, 2.0}, {10.0, 2.0}, 0.0, 1.0, 0.0},
+                                 {{0.0, 4.0}, {10.0, 4.0}, 0.0, 1.0, 0.0},
+                                 {{0.0, 6.0}, {10.0, 6.0}, 0.0, 1.0, 0.0},
+                                 {{0.0, 8.0}, {10.0, 8.0}, 0.0, 1.0, 0.0},
+                                 {{0.0, 10.0}, {10.0, 10.0}, 0.0, 1.0, 0.0},
+                                 {{0.0, 12.0}, {10.0, 12.0}, 0.0, 1.0, 0.0}});
 
-  Translator translator(lowTranslatorCode);
+  LowScript lowReplicatorCode1({{{0.0, 0.0}, {10.0, 0.0}, 0.0, 1.0, 0.0},
+                                {{0.0, 2.0}, {10.0, 2.0}, 0.0, 1.0, 0.0},
+                                {{0.0, 4.0}, {10.0, 4.0}, 0.0, 1.0, 0.0},
+                                {{0.0, 6.0}, {10.0, 6.0}, 0.0, 1.0, 0.0},
+                                {{0.0, 8.0}, {10.0, 8.0}, 0.0, 1.0, 0.0},
+                                {{0.0, 10.0}, {10.0, 10.0}, 0.0, 1.0, 0.0},
+                                {{0.0, 12.0}, {10.0, 12.0}, 0.0, 1.0, 0.0},
+                                {{0.0, -4.0}, {8.0, 0.0}, 20.0, 1.0, 0.0},
+                                {{0.0, -4.0}, {8.0, 2.0}, 20.0, 1.0, 0.0},
+                                {{0.0, -4.0}, {8.0, 4.0}, 20.0, 1.0, 0.0},
+                                {{0.0, -4.0}, {8.0, 6.0}, 20.0, 1.0, 0.0},
+                                {{0.0, -4.0}, {8.0, 8.0}, 20.0, 1.0, 0.0},
+                                {{0.0, -4.0}, {8.0, 10.0}, 20.0, 1.0, 0.0},
+                                {{0.0, -4.0}, {8.0, 12.0}, 20.0, 1.0, 0.0}});
 
-  LowScript lowTranslatorCode2 = translator(highTranslatorCode);
+  HighScript highReplicatorCode({{{0.0, 0.0}, {10.0, 0.0}, 0.0, 1.0, 0.0},
+                                 {{0.0, 2.0}, {10.0, 2.0}, 0.0, 1.0, 0.0},
+                                 {{0.0, 4.0}, {10.0, 4.0}, 0.0, 1.0, 0.0},
+                                 {{0.0, 6.0}, {10.0, 6.0}, 0.0, 1.0, 0.0},
+                                 {{0.0, 8.0}, {10.0, 8.0}, 0.0, 1.0, 0.0},
+                                 {{0.0, 10.0}, {10.0, 10.0}, 0.0, 1.0, 0.0},
+                                 {{0.0, 12.0}, {10.0, 12.0}, 0.0, 1.0, 0.0},
+                                 {{0.0, -4.0}, {8.0, 0.0}, 20.0, 1.0, 0.0},
+                                 {{0.0, -4.0}, {8.0, 2.0}, 20.0, 1.0, 0.0},
+                                 {{0.0, -4.0}, {8.0, 4.0}, 20.0, 1.0, 0.0},
+                                 {{0.0, -4.0}, {8.0, 6.0}, 20.0, 1.0, 0.0},
+                                 {{0.0, -4.0}, {8.0, 8.0}, 20.0, 1.0, 0.0},
+                                 {{0.0, -4.0}, {8.0, 10.0}, 20.0, 1.0, 0.0},
+                                 {{0.0, -4.0}, {8.0, 12.0}, 20.0, 1.0, 0.0}});
 
-  lowScriptDiff(lowTranslatorCode2, lowTranslatorCode);
+  Translator translator1(lowTranslatorCode1);
+  LowScript lowTranslatorCode2 = translator1(highTranslatorCode);
+  showLowScriptDiff(lowTranslatorCode2, lowTranslatorCode1);
 
-  // LowScript translatorCode({LowNeuronParameters{Point{2.0, 2.0},
-  // Point{2.0, 2.0}, 2.0, -1.2, 0.5}});
+  // Translator translator2(lowTranslatorCode2);
 
-  // NeuronMap translatorNeuronMap(translatorCode);
+  // LowScript lowTranslatorCode3 = translator2(highTranslatorCode);
 
-  // ActivationMap activationMap({ActivationPoint{Point{2.0, 2.0}, 1.2}});
+  // showLowScriptDiff(lowTranslatorCode3, lowTranslatorCode1);
 
-  // NeuralNetwork translatorNN(translatorNeuronMap, activationMap);
+  // Translator translator3(lowTranslatorCode3);
 
-  // activationMap.printActivationMap();
+  // LowScript lowTranslatorCode4 = translator3(highTranslatorCode);
 
-  // for (size_t i = 0; i < 4; i++) {
-  //   translatorNN.doOneIteration();
-  //   translatorNN.addRandomActivation({1.0, 0.0});
-  //   activationMap.printActivationMap();
-  // }
+  // showLowScriptDiff(lowTranslatorCode4, lowTranslatorCode1);
 }

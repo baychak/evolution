@@ -9,6 +9,7 @@ class Replicator {
   HighScript operator()(const HighScript &code);
 
  private:
+  NeuronMap mNeuronMap;
+  ActivationMap mActivationMap;
   NeuralNetwork mNN;
 };
-

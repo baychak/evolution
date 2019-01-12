@@ -24,4 +24,4 @@ struct LowNeuronParameters {
 
 typedef std::vector<LowNeuronParameters> LowScript;
 
-void lowScriptDiff(const LowScript & script2, const LowScript & script1);
+void showLowScriptDiff(const LowScript & script2, const LowScript & script1);

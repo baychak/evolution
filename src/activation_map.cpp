@@ -30,8 +30,8 @@ double ActivationMap::getActivation(Point point) const {
   double summa = 0.0;
 
   for (ActivationPoint apoint : mMap) {
-    summa += std::exp(-std::pow(apoint.point.x - point.x, 2.0) -
-                      std::pow(apoint.point.y - point.y, 2.0)) *
+    summa += std::exp(2*(-std::pow(apoint.point.x - point.x, 2.0) -
+                      std::pow(apoint.point.y - point.y, 2.0))) *
              apoint.activation;
   }
 
